@@ -8,12 +8,12 @@ O script lê todas as matrizes colocadas na pasta `planilhas/`, extrai apenas os
 
 ## Estrutura do projeto
 
-matriz_extrator/
-├─ planilhas/ # COLOQUE AQUI TODAS AS MATRIZES (.xls, .xlsx, .xlsm)
-├─ convertidos/ # gerado automaticamente (conversão de .xls → .xlsx)
-├─ saida/ # arquivo final será gerado aqui
-├─ extrair_matriz.py # script principal
-└─ README.md
+matriz_extrator/<br>
+├─ planilhas/  # COLOQUE AQUI TODAS AS MATRIZES (.xls, .xlsx, .xlsm) <br>
+├─ convertidos/ # gerado automaticamente (conversão de .xls → .xlsx)<br>
+├─ saida/ # arquivo final será gerado aqui<br>
+├─ extrair_matriz.py # script principal<br>
+└─ README.md<br>
 ---
 
 ## Requisitos
