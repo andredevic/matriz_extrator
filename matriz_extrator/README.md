@@ -1,34 +1,50 @@
 # Matriz Extrator (Fontes de Energia / Equipamentos)
 
-Projeto para consolidar Matrizes Energéticas (Excel) em uma planilha única, pronta para importação no sistema.
+Projeto para consolidar Matrizes Energéticas (Excel) em uma planilha única, pronta para importação no sistema de cadastro de Fontes de Energia e Equipamentos.
 
-## Estrutura
+O script lê todas as matrizes colocadas na pasta `planilhas/`, extrai apenas os dados relevantes da matriz e gera um arquivo consolidado.
 
-- `planilhas/` → coloque aqui todas as matrizes `.xlsx`
-- `saida/` → o script gera aqui o arquivo final
-- `extrair_matriz.py` → script principal
+---
 
-## Saída gerada
+## Estrutura do projeto
 
-- `saida/matriz_consolidada.xlsx`
+matriz_extrator/
+├─ planilhas/ # COLOQUE AQUI TODAS AS MATRIZES (.xls, .xlsx, .xlsm)
+├─ convertidos/ # gerado automaticamente (conversão de .xls → .xlsx)
+├─ saida/ # arquivo final será gerado aqui
+├─ extrair_matriz.py # script principal
+└─ README.md
+---
 
-## Como usar
+## Requisitos
 
-1. Copie suas matrizes para a pasta `planilhas/`
-2. Rode:
+- Windows
+- Python 3.9 ou superior
+- Microsoft Excel instalado (necessário para converter arquivos `.xls`)
 
+### Bibliotecas Python
+
+Instale uma única vez:
+
+```bash
+python -m pip install pandas openpyxl pywin32
+```
+### Como usar
+
+- 1 Copie todas as matrizes energéticas para a pasta:
+
+```bash
+planilhas/
+```
+Pode colocar quantos arquivos quiser.
+Extensões suportadas: .xls, .xlsx, .xlsm.
+
+- 2 No terminal, dentro da pasta do projeto, execute:
 ```bash
 python extrair_matriz.py
 ```
 
-3. Pegue o arquivo:
-
-- `saida/matriz_consolidada.xlsx`
-
-## Regras importantes
-
-- Linhas começam na **linha 11**.
-- Campos de TAG/descrição/processo que resultarem vazios viram **null** (None).
-- `Tag do Equipamento` (B) e `Descrição do Equipamento` (C+D) fazem **fill-down** (herdam de cima se vierem vazias).
-- Linhas sem nenhuma informação de fonte/processo são ignoradas.
-
+- 3 Ao final do processo, o arquivo será gerado em:
+```bash
+saida/matriz_consolidada.xlsx
+```
